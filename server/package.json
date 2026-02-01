@@ -11,11 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sparticuz/chromium": "^143.0.4",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "html-to-docx": "^1.8.0",
     "nodemon": "^3.1.0",
-    "puppeteer": "^22.0.0"
+    "puppeteer": "^22.0.0",
+    "puppeteer-core": "^24.36.1"
   }
 }

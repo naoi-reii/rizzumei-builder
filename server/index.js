@@ -25,26 +25,44 @@ app.post('/api/export/pdf', async (req, res) => {
     }
 
     try {
-        // Attempt to find local Chrome on Windows to avoid large downloads
-        let executablePath = undefined;
-        const possiblePaths = [
-            'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-            'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-        ];
+        let browser;
+        if (process.env.VERCEL) {
+            // Production / Vercel Configuration
+            const chromium = require('@sparticuz/chromium');
+            const puppeteer = require('puppeteer-core');
 
-        for (const p of possiblePaths) {
-            if (fs.existsSync(p)) {
-                executablePath = p;
-                console.log('Using local Chrome at:', p);
-                break;
+            // Optional: load custom font if needed
+            // await chromium.font('https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf');
+
+            browser = await puppeteer.launch({
+                args: chromium.args,
+                defaultViewport: chromium.defaultViewport,
+                executablePath: await chromium.executablePath(),
+                headless: chromium.headless,
+                ignoreHTTPSErrors: true,
+            });
+        } else {
+            // Local Development Configuration
+            let executablePath = undefined;
+            const possiblePaths = [
+                'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+                'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+            ];
+
+            for (const p of possiblePaths) {
+                if (fs.existsSync(p)) {
+                    executablePath = p;
+                    console.log('Using local Chrome at:', p);
+                    break;
+                }
             }
-        }
 
-        const browser = await require('puppeteer').launch({
-            headless: 'new',
-            executablePath: executablePath, // Will use system chrome if found, otherwise default
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
-        });
+            browser = await require('puppeteer').launch({
+                headless: 'new',
+                executablePath: executablePath,
+                args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+        }
         const page = await browser.newPage();
 
         // Optimize PDF generation speed
