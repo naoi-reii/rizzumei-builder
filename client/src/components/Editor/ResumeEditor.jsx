@@ -27,16 +27,16 @@ const ResumeEditor = () => {
                 <div key={id} className="border border-gray-200 rounded-xl bg-white overflow-hidden shadow-sm transition-all duration-200">
                     <button
                         onClick={() => toggleSection(id)}
-                        className={`w-full flex items-center justify-between p-4 text-left font-semibold transition-colors cursor-pointer ${openSection === id ? 'bg-blue-50 text-blue-700' : 'bg-white text-gray-700 hover:bg-gray-50'
+                        className={`w-full flex items-center justify-between p-4 text-left text-sm font-semibold transition-colors cursor-pointer ${openSection === id ? 'bg-blue-50 text-blue-700' : 'bg-white text-gray-700 hover:bg-gray-50'
                             }`}
                     >
                         <div className="flex items-center gap-3">
                             <div className={`p-2 rounded-lg ${openSection === id ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-500'}`}>
-                                <Icon className="w-5 h-5" />
+                                <Icon className="w-4 h-4" />
                             </div>
                             <span>{label}</span>
                         </div>
-                        {openSection === id ? <ChevronUp className="w-5 h-5 text-blue-600" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+                        {openSection === id ? <ChevronUp className="w-4 h-4 text-blue-600" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
                     </button>
 
                     {openSection === id && (

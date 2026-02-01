@@ -12,28 +12,28 @@ export const ResumeProvider = ({ children }) => {
         const savedData = localStorage.getItem('resumeData');
         return savedData ? JSON.parse(savedData) : {
             personalInfo: {
-                fullName: 'Alex Morgan',
-                jobTitle: 'Senior Product Designer',
-                email: 'alex.morgan@design.com',
-                phone: '+1 (555) 123-4567',
-                address: 'San Francisco, CA',
-                summary: 'Creative and detail-oriented Product Designer with 6+ years of experience...',
+                fullName: 'Christian Ang',
+                jobTitle: 'Student',
+                email: 'angchristian95@gmail.com',
+                phone: '09123456789',
+                address: 'LAGRO, QC',
+                summary: 'pogi',
             },
             education: [
                 {
                     id: 1,
-                    institution: 'University of Design, San Francisco',
-                    degree: 'BFA in Interaction Design',
-                    year: '2018'
+                    institution: 'Our Lady of Fatima University',
+                    degree: 'BS in Information Technology',
+                    year: '2030'
                 }
             ],
             experience: [
                 {
                     id: 1,
-                    company: 'TechFlow Inc.',
-                    title: 'Senior Product Designer',
-                    duration: 'Jan 2021 - Present',
-                    description: 'Led the redesign of the core SaaS platform, improving user retention by 15%.'
+                    company: 'Google',
+                    title: 'Janitor',
+                    duration: 'Jan 2026 - Present',
+                    description: 'Ako nag lilinis sa first floor'
                 }
             ],
             skills: ['Figma', 'Sketch', 'Adobe XD', 'Prototyping', 'HTML/CSS'],
