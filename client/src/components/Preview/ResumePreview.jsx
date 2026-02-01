@@ -12,12 +12,22 @@ const ResumePreview = forwardRef((props, ref) => {
 
     React.useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 768) {
-                // Calculate scale to fit screen width
-                // A4 width is ~794px (210mm). We leave some padding (e.g., 32px or 48px total for margins)
-                const availableWidth = window.innerWidth - 32;
-                const a4WidthPx = 794;
-                const scale = Math.min(availableWidth / a4WidthPx, 1) * 100;
+            let availableWidth = window.innerWidth;
+            const a4WidthPx = 794; // 210mm in pixels (approx)
+
+            if (window.innerWidth >= 1024) {
+                // Desktop Split View (lg breakpoint)
+                // Sidebar is 450px on lg, 500px on xl. We can approximate or take the safer constrained width.
+                const sidebarWidth = window.innerWidth >= 1280 ? 500 : 450;
+                availableWidth = window.innerWidth - sidebarWidth - 48; // Sidebar + Padding
+            } else {
+                // Mobile/Tablet Stacked View
+                availableWidth -= 32; // Basic Padding
+            }
+
+            // If available space is smaller than A4, scale down. Otherwise default to 100%.
+            if (availableWidth < a4WidthPx) {
+                const scale = (availableWidth / a4WidthPx) * 100;
                 setZoom(Math.floor(scale));
             } else {
                 setZoom(100);
