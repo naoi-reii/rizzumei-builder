@@ -108,16 +108,7 @@ const Home = () => {
                     <div className="h-24 lg:hidden"></div>
                 </div>
 
-                {/* Mobile Sticky Footer */}
-                <div className="lg:hidden absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 flex gap-3 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-                    <button
-                        onClick={handleExportPDF}
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-sm shadow-md shadow-blue-500/20 active:bg-blue-700"
-                    >
-                        <Download className="w-4 h-4" />
-                        Download
-                    </button>
-                </div>
+
 
             </div>
         </div>

@@ -32,6 +32,14 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
                         <LayoutGrid className="w-6 h-6" />
                     </button>
 
+                    {/* Mobile: Download Icon Only */}
+                    <button
+                        onClick={onExportPDF}
+                        className="lg:hidden p-2 bg-blue-600 text-white rounded-lg shadow-md shadow-blue-500/20 active:bg-blue-700 cursor-pointer"
+                    >
+                        <Download className="w-5 h-5" />
+                    </button>
+
                     {/* Desktop: Full Actions */}
                     <div className="hidden lg:flex items-center gap-4">
                         <button
