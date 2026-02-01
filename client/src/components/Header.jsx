@@ -17,7 +17,6 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
                     </div>
                     <div className="flex flex-col">
                         <h1 className="text-base md:text-lg font-bold text-gray-900 leading-tight">Resume Builder</h1>
-                        <span className="text-[10px] md:text-xs text-gray-400 font-bold tracking-wider uppercase">Draft • My Professional CV</span>
                     </div>
                 </div>
 
@@ -44,15 +43,6 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
                         </button>
 
                         <div className="h-8 w-px bg-gray-200 mx-2"></div>
-
-                        <button
-                            onClick={onExportDOCX}
-                            className="cursor-pointer flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 text-sm font-semibold hover:bg-gray-50 transition-all hover:border-gray-300"
-                            title="Export DOCX"
-                        >
-                            <FileJson className="w-4 h-4" />
-                            <span>DOCX</span>
-                        </button>
 
                         <button
                             onClick={onExportPDF}

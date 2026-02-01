@@ -54,33 +54,12 @@ const Home = () => {
         }
     };
 
-    const handleExportDOCX = async () => {
-        try {
-            const content = resumeRef.current.innerHTML;
-            const fullHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>${content}</body></html>`;
-            const response = await fetch('http://localhost:5000/api/export/docx', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ html: fullHtml })
-            });
-            if (!response.ok) throw new Error('Export failed');
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${resumeData.personalInfo.fullName.replace(/\s+/g, '_') || 'Resume'}.docx`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        } catch (e) { alert('DOCX Error') }
-    };
-
     const [activeTab, setActiveTab] = useState('editor');
 
     return (
         <div className="flex flex-col h-screen bg-[#F3F4F6] font-sans text-gray-900 overflow-hidden">
             {/* 1. Global Header */}
-            <Header onExportPDF={handleExportPDF} onExportDOCX={handleExportDOCX} />
+            <Header onExportPDF={handleExportPDF} />
 
             {/* Mobile Tab Switcher */}
             <div className="lg:hidden px-4 pt-4 pb-2">
@@ -131,13 +110,6 @@ const Home = () => {
 
                 {/* Mobile Sticky Footer */}
                 <div className="lg:hidden absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 flex gap-3 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-                    <button
-                        onClick={handleExportDOCX}
-                        className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-white border border-gray-300 rounded-xl font-bold text-gray-700 text-sm shadow-sm active:bg-gray-50"
-                    >
-                        <FileJson className="w-4 h-4" />
-                        Save
-                    </button>
                     <button
                         onClick={handleExportPDF}
                         className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-sm shadow-md shadow-blue-500/20 active:bg-blue-700"

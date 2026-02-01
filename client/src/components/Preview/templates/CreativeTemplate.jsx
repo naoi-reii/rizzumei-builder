@@ -4,7 +4,7 @@ const CreativeTemplate = ({ data }) => {
     const { personalInfo, education, experience, skills, projects } = data;
 
     return (
-        <div className="w-full h-full bg-white text-gray-800 font-sans flex" id="resume-content">
+        <div className="w-full min-h-[297mm] bg-white text-gray-800 font-sans flex" id="resume-content">
             {/* Sidebar (Left) */}
             <div className="w-1/3 bg-gray-900 text-white p-8 flex flex-col h-full">
                 <div className="mb-8">
