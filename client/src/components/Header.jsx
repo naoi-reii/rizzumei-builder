@@ -54,7 +54,7 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
 
                         <button
                             onClick={onExportPDF}
-                            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all active:scale-95"
+                            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all active:scale-95"
                         >
                             <Download className="w-4 h-4" />
                             <span>Download PDF</span>
