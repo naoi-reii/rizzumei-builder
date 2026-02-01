@@ -100,7 +100,7 @@ const Home = () => {
                     flex-1 overflow-y-auto bg-gray-100 p-4 md:p-8 flex justify-center items-start lg:relative
                     ${activeTab === 'preview' ? 'block' : 'hidden lg:flex'}
                 `}>
-                    <div className="transform scale-[0.38] sm:scale-[0.5] md:scale-[0.7] lg:scale-[0.6] xl:scale-[0.85] origin-top transition-transform duration-200 mt-4 lg:mt-0">
+                    <div className="w-full flex justify-center mt-4 lg:mt-0">
                         <ResumePreview ref={resumeRef} />
                     </div>
 

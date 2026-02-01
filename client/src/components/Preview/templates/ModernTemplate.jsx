@@ -6,26 +6,33 @@ const ModernTemplate = ({ data }) => {
     return (
         <div className="w-full h-full bg-white text-gray-800 font-sans p-8" id="resume-content">
             {/* Header */}
-            <header className="border-b-2 border-gray-900 pb-6 mb-6">
-                <h1 className="text-4xl font-bold uppercase tracking-wider text-gray-900">{personalInfo.fullName}</h1>
-                <h2 className="text-xl text-gray-600 mt-2 font-medium">{personalInfo.jobTitle}</h2>
+            <header className="border-b-2 border-gray-900 pb-6 mb-6 flex items-start gap-6">
+                {personalInfo.photo && (
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-200 shadow-sm flex-shrink-0">
+                        <img src={personalInfo.photo} alt={personalInfo.fullName} className="w-full h-full object-cover" />
+                    </div>
+                )}
+                <div className="flex-1">
+                    <h1 className="text-4xl font-bold uppercase tracking-wider text-gray-900">{personalInfo.fullName}</h1>
+                    <h2 className="text-xl text-gray-600 mt-2 font-medium">{personalInfo.jobTitle}</h2>
 
-                <div className="flex flex-wrap gap-4 mt-4 text-sm text-gray-600">
-                    {personalInfo.email && (
-                        <div className="flex items-center">
-                            <span>{personalInfo.email}</span>
-                        </div>
-                    )}
-                    {personalInfo.phone && (
-                        <div className="flex items-center">
-                            <span>{personalInfo.phone}</span>
-                        </div>
-                    )}
-                    {personalInfo.address && (
-                        <div className="flex items-center">
-                            <span>{personalInfo.address}</span>
-                        </div>
-                    )}
+                    <div className="flex flex-wrap gap-4 mt-4 text-sm text-gray-600">
+                        {personalInfo.email && (
+                            <div className="flex items-center">
+                                <span>{personalInfo.email}</span>
+                            </div>
+                        )}
+                        {personalInfo.phone && (
+                            <div className="flex items-center">
+                                <span>{personalInfo.phone}</span>
+                            </div>
+                        )}
+                        {personalInfo.address && (
+                            <div className="flex items-center">
+                                <span>{personalInfo.address}</span>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </header>
 

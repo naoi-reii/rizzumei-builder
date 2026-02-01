@@ -20,19 +20,19 @@ const Skills = () => {
 
     return (
         <div className="space-y-6 animate-in fade-in duration-500">
-            <h2 className="text-lg font-semibold text-gray-700">Skills</h2>
+            <h2 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-3 border-b pb-2">Skills</h2>
 
             <form onSubmit={handleAddSkill} className="flex gap-2">
                 <input
                     type="text"
                     value={newSkill}
                     onChange={(e) => setNewSkill(e.target.value)}
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all placeholder:text-gray-400 text-sm"
                     placeholder="Add a skill (e.g. React, Python)"
                 />
                 <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-sm"
                 >
                     Add
                 </button>

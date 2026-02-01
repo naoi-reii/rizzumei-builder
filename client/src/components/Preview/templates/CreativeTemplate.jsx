@@ -8,10 +8,16 @@ const CreativeTemplate = ({ data }) => {
             {/* Sidebar (Left) */}
             <div className="w-1/3 bg-gray-900 text-white p-8 flex flex-col h-full">
                 <div className="mb-8">
-                    {/* Placeholder for Photo if we added that feature, keeping simple for now */}
-                    <div className="w-24 h-24 bg-gray-700 rounded-full mb-4 mx-auto flex items-center justify-center text-2xl font-bold border-4 border-gray-600">
-                        {personalInfo.fullName.split(' ').map(n => n[0]).join('')}
-                    </div>
+                    {/* Profile Photo */}
+                    {personalInfo.photo ? (
+                        <div className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-gray-700 overflow-hidden shadow-lg">
+                            <img src={personalInfo.photo} alt={personalInfo.fullName} className="w-full h-full object-cover" />
+                        </div>
+                    ) : (
+                        <div className="w-24 h-24 bg-gray-700 rounded-full mb-4 mx-auto flex items-center justify-center text-2xl font-bold border-4 border-gray-600">
+                            {personalInfo.fullName.split(' ').map(n => n[0]).join('')}
+                        </div>
+                    )}
                     <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2 border-b border-gray-700 pb-1">Contact</h3>
                     <ul className="text-sm space-y-2 text-gray-300">
                         <li>{personalInfo.phone}</li>

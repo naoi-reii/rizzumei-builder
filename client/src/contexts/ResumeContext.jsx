@@ -18,6 +18,7 @@ export const ResumeProvider = ({ children }) => {
                 phone: '09123456789',
                 address: 'LAGRO, QC',
                 summary: 'pogi',
+                photo: null,
             },
             education: [
                 {
