@@ -12,8 +12,8 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
             <header className="h-16 bg-white border-b border-gray-200 px-4 md:px-6 flex items-center justify-between sticky top-0 z-50">
                 {/* Left: Logo & Title */}
                 <div className="flex items-center gap-2 md:gap-3">
-                    <div className="p-1.5 md:p-2 bg-blue-600 rounded-lg">
-                        <File className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                    <div className="p-1.5 md:p-2 bg-green-600 rounded-lg">
+                        <FileText className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
                     <div className="flex flex-col">
                         <h1 className="text-base md:text-lg font-bold text-gray-900 leading-tight">Resume Builder</h1>
