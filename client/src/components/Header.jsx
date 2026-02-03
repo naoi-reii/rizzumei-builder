@@ -12,7 +12,7 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
             <header className="h-16 bg-white border-b border-gray-200 px-4 md:px-6 flex items-center justify-between sticky top-0 z-50">
                 {/* Left: Logo & Title */}
                 <div className="flex items-center gap-2 md:gap-3">
-                    <div className="p-1.5 md:p-2 bg-green-600 rounded-lg">
+                    <div className="p-1.5 md:p-2 bg-blue-600 rounded-lg">
                         <FileText className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
                     <div className="flex flex-col">
@@ -54,7 +54,7 @@ const Header = ({ onExportPDF, onExportDOCX }) => {
 
                         <button
                             onClick={onExportPDF}
-                            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all active:scale-95"
+                            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all active:scale-95"
                         >
                             <Download className="w-4 h-4" />
                             <span>Download PDF</span>
