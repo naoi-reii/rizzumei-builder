@@ -14,7 +14,7 @@ export default {
                 light: '#F3F4F6', // Gray 100
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                sans: ['Poppins', 'sans-serif'],
                 serif: ['Merriweather', 'serif'],
             },
             boxShadow: {

@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ResumeProvider } from './contexts/ResumeContext';
-import Home from './components/Home'; // We'll create this or use a layout
+import Home from './components/Home';
+import EditorPage from './components/EditorPage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <div className="min-h-screen bg-gray-100 font-sans text-gray-900">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/editor" element={<EditorPage />} />
           </Routes>
         </div>
       </Router>
